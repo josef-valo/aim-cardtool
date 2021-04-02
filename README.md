@@ -19,8 +19,8 @@ The main aim is to provide human usable test tool via web client. The test tools
 REST interface is created for automation testing, for detail see http://localhost:8080/swagger-ui.html
 
 Example call of the REST API:
-  * card state -> *curl -X 'GET' 'http://localhost:8080/card/1'* 
-  * card states -> *curl -X 'GET' 'http://localhost:8080/card'*
+  * card reader state -> *curl -X 'GET' 'http://localhost:8080/card/1'* 
+  * card reader states -> *curl -X 'GET' 'http://localhost:8080/card'*
   * card in -> *curl -X 'POST' 'http://localhost:8080/card/1/CARD_ID'*
   * card out -> *curl -X 'DELETE' 'http://localhost:8080/card/1'*
 
