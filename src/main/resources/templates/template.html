@@ -1,0 +1,46 @@
+<!doctype html>
+<html  xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{~/webjars/bootstrap/css/bootstrap.min.css}" />
+<link th:rel="stylesheet" th:href="@{~/webjars/bootstrap-select/css/bootstrap-select.min.css}" />
+
+<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">AIM</title>
+
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+			<a class="navbar-brand" href="/">AIM Cardmon Tool</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a
+                        class="nav-link" href="/config/refresh">Refresh Configuration</a></li>
+                </ul>
+            </div>
+		</nav>
+		<div th:text="${error_msg}" th:if="${error_msg != null}" class="alert alert-danger" role="alert"></div>
+	</header>
+
+	<main role="main">
+		<section layout:fragment="nm-content">
+			<p>Your page content goes here</p>
+		</section>
+	</main>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script th:src="@{~/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{~/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

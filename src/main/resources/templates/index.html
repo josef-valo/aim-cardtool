@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template}">
+<head>
+<title>Cardmon Tool</title>
+</head>
+<body>
+	<section layout:fragment="nm-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div th:each="entry : ${readers}"
+					style="padding-left: 1em; padding-top: 1em">
+					<form th:action="@{/}" method="post">
+						<div class="card">
+							<div class="card-header"><span th:text="${entry.key}" ></span> : <span th:text="${entry.value.name}" ></span></div>
+							<div class="card-body">
+								<div class="form-group">
+									<label for="cardId">ID Card</label> <input type="text"
+										th:value="${entry.value.cardId}"
+										onkeyup="
+										this.value=this.value.replace(/[^a-zA-Z0-9]/g,
+										'');"
+										style="text-transform: uppercase" class="form-control"
+										id="cardId" name="cardId" maxlength="32" size="32">
+								</div>
+								<input type="hidden" th:value="${entry.key}" id="readerNo"
+									name="readerNo">
+
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+</html>
